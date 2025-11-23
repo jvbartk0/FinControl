@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fincontrol.controller.DashboardController">
+    <children>
+        <HBox styleClass="header">
+            <children>
+                <VBox HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="Dashboard" styleClass="header-title" />
+                        <Label text="Visão geral das suas finanças" styleClass="header-subtitle" />
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER_RIGHT">
+                    <children>
+                        <Label fx:id="exchangeRateLabel" text="USD/BRL: Carregando..." styleClass="exchange-rate-label" />
+                        <Button fx:id="logoutButton" mnemonicParsing="false" text="Sair" styleClass="logout-button" />
+                    </children>
+                </VBox>
+            </children>
+            <padding>
+                <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+            </padding>
+        </HBox>
+
+        <HBox styleClass="summary-cards">
+            <children>
+                <VBox styleClass="summary-card" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="Saldo Total" styleClass="card-title" />
+                        <Label fx:id="totalBalanceLabel" text="R$ 0,00" styleClass="balance-amount" />
+                    </children>
+                </VBox>
+                <VBox styleClass="summary-card" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="Total Receitas" styleClass="card-title" />
+                        <Label fx:id="totalIncomeLabel" text="R$ 0,00" styleClass="income-amount" />
+                    </children>
+                </VBox>
+                <VBox styleClass="summary-card" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="Total Despesas" styleClass="card-title" />
+                        <Label fx:id="totalExpenseLabel" text="R$ 0,00" styleClass="expense-amount" />
+                    </children>
+                </VBox>
+            </children>
+            <padding>
+                <Insets left="20.0" right="20.0" />
+            </padding>
+        </HBox>
+
+        <HBox styleClass="charts-container">
+            <children>
+                <VBox styleClass="chart-box" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="Gastos por Categoria" styleClass="chart-title" />
+                        <PieChart fx:id="categoryPieChart" styleClass="chart" />
+                    </children>
+                </VBox>
+                <VBox styleClass="chart-box" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="Gastos por Mês" styleClass="chart-title" />
+                        <BarChart fx:id="monthlyBarChart" styleClass="chart">
+                            <xAxis>
+                                <CategoryAxis side="BOTTOM" />
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis side="LEFT" />
+                            </yAxis>
+                        </BarChart>
+                    </children>
+                </VBox>
+            </children>
+            <padding>
+                <Insets left="20.0" right="20.0" />
+            </padding>
+        </HBox>
+
+        <HBox styleClass="charts-container">
+            <children>
+                <VBox styleClass="chart-box" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="Evolução do Saldo" styleClass="chart-title" />
+                        <LineChart fx:id="balanceLineChart" styleClass="chart">
+                            <xAxis>
+                                <CategoryAxis side="BOTTOM" />
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis side="LEFT" />
+                            </yAxis>
+                        </LineChart>
+                    </children>
+                </VBox>
+            </children>
+            <padding>
+                <Insets left="20.0" right="20.0" />
+            </padding>
+        </HBox>
+
+        <HBox styleClass="navigation-buttons">
+            <children>
+                <Button fx:id="transactionsButton" mnemonicParsing="false" text="Gerenciar Transações" styleClass="nav-button" />
+                <Button fx:id="categoriesButton" mnemonicParsing="false" text="Gerenciar Categorias" styleClass="nav-button" />
+            </children>
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+            </padding>
+        </HBox>
+    </children>
+</VBox>

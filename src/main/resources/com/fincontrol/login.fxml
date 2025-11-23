@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fincontrol.controller.LoginController">
+    <children>
+        <VBox alignment="CENTER" spacing="10.0">
+            <children>
+                <Label text="FinControl" styleClass="login-title">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+                <Label text="Controle Financeiro Pessoal" styleClass="login-subtitle" />
+            </children>
+        </VBox>
+
+        <VBox alignment="CENTER_LEFT" spacing="15.0" styleClass="login-form">
+            <children>
+                <Label text="Usuário" styleClass="form-label" />
+                <TextField fx:id="usernameField" promptText="Digite seu usuário" styleClass="form-field" />
+
+                <Label text="Senha" styleClass="form-label" />
+                <PasswordField fx:id="passwordField" promptText="Digite sua senha" styleClass="form-field" />
+
+                <Label fx:id="errorLabel" styleClass="error-label" visible="false" />
+
+                <Button fx:id="loginButton" mnemonicParsing="false" text="Entrar" styleClass="login-button" />
+            </children>
+        </VBox>
+
+
+    </children>
+    <padding>
+        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+    </padding>
+</VBox>

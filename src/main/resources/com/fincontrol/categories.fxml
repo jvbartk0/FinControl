@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fincontrol.controller.CategoryController">
+    <children>
+        <HBox styleClass="header">
+            <children>
+                <VBox HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="Gerenciar Categorias" styleClass="header-title" />
+                        <Label text="Adicione, edite ou exclua categorias" styleClass="header-subtitle" />
+                    </children>
+                </VBox>
+                <Button fx:id="backButton" mnemonicParsing="false" text="Voltar" styleClass="back-button" />
+            </children>
+            <padding>
+                <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+            </padding>
+        </HBox>
+
+        <HBox styleClass="form-section">
+            <children>
+                <VBox styleClass="form-container" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="Nova Categoria" styleClass="form-section-title" />
+
+                        <VBox spacing="10.0">
+                            <children>
+                                <Label text="Nome da Categoria" styleClass="form-label" />
+                                <TextField fx:id="nameField" styleClass="form-field" />
+                            </children>
+                        </VBox>
+
+                        <HBox spacing="10.0" styleClass="form-buttons">
+                            <children>
+                                <Button fx:id="addButton" mnemonicParsing="false" text="Adicionar" styleClass="primary-button" />
+                                <Button fx:id="updateButton" mnemonicParsing="false" text="Atualizar" styleClass="secondary-button" />
+                                <Button fx:id="deleteButton" mnemonicParsing="false" text="Excluir" styleClass="danger-button" />
+                                <Button fx:id="clearButton" mnemonicParsing="false" text="Limpar" styleClass="secondary-button" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+
+                <VBox styleClass="list-container" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="Categorias Existentes" styleClass="form-section-title" />
+                        <ListView fx:id="categoriesList" VBox.vgrow="ALWAYS" />
+                    </children>
+                </VBox>
+            </children>
+            <padding>
+                <Insets left="20.0" right="20.0" />
+            </padding>
+        </HBox>
+    </children>
+</VBox>
