@@ -1,0 +1,57 @@
+[
+  {
+    "id": "adfae7f2-00f1-4574-958f-556849a3c1af",
+    "date": "2025-11-22",
+    "description": "pix",
+    "type": "RECEITA",
+    "category": {
+      "id": "42d9ed1e-77a9-4493-9aa5-e4fa186e3c67",
+      "name": "pix"
+    },
+    "amount": 22.0
+  },
+  {
+    "id": "09e6e487-3342-4e70-b02f-4c4634b9c32b",
+    "date": "2025-11-22",
+    "description": "pix env",
+    "type": "DESPESA",
+    "category": {
+      "id": "42d9ed1e-77a9-4493-9aa5-e4fa186e3c67",
+      "name": "pix"
+    },
+    "amount": 15.0
+  },
+  {
+    "id": "364db506-aaf1-4f4c-9077-5e394516e373",
+    "date": "2025-08-19",
+    "description": "sada",
+    "type": "RECEITA",
+    "category": {
+      "id": "42d9ed1e-77a9-4493-9aa5-e4fa186e3c67",
+      "name": "pix"
+    },
+    "amount": 1231.0
+  },
+  {
+    "id": "e45b8d42-c806-46ea-83d8-624cb5ef0466",
+    "date": "2025-10-29",
+    "description": "213",
+    "type": "DESPESA",
+    "category": {
+      "id": "42d9ed1e-77a9-4493-9aa5-e4fa186e3c67",
+      "name": "pix"
+    },
+    "amount": 1000.0
+  },
+  {
+    "id": "f34fd7d7-7705-4abd-9582-03e0d3e4b02f",
+    "date": "2025-11-22",
+    "description": "6urtuyr",
+    "type": "RECEITA",
+    "category": {
+      "id": "42d9ed1e-77a9-4493-9aa5-e4fa186e3c67",
+      "name": "pix"
+    },
+    "amount": 232.0
+  }
+]
