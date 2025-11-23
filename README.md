@@ -1,112 +1,106 @@
-FinControl - Sistema de Controle Financeiro Pessoal
-Descrição
-O FinControl é uma aplicação JavaFX para controle financeiro pessoal que permite gerenciar transações, categorias e visualizar relatórios através de gráficos interativos.
+# 💰 FinControl: Sistema de Controle Financeiro Pessoal
 
-Funcionalidades
-Login Simples - Tela de entrada sem validação real
+<p align="center">
+  <img src="https://img.shields.io/badge/Java-17+-blue.svg" alt="Java Version">
+  <img src="https://img.shields.io/badge/JavaFX-17-green.svg" alt="JavaFX Version">
+  <img src="https://img.shields.io/badge/Build-Maven-red.svg" alt="Build Tool">
+  <img src="https://img.shields.io/badge/Persistence-JSON%20(Gson)-lightgrey.svg" alt="Persistence">
+  <img src="https://img.shields.io/badge/Tests-JUnit%205-yellow.svg" alt="Testing">
+</p>
 
-Dashboard - Visão geral com saldo, receitas e despesas
+## 🎯 Visão Geral do Projeto
 
-Gráficos - Pizza (gastos por categoria) e Barras (gastos por mês)
+O **FinControl** é uma aplicação desktop robusta desenvolvida em **JavaFX** e **Java 17** para auxiliar no gerenciamento financeiro pessoal. O projeto demonstra uma arquitetura limpa e modular, utilizando o padrão **MVC (Model-View-Controller)**, e oferece uma interface de usuário moderna com suporte a **Tema Escuro (Dark Theme)**.
 
-Transações - CRUD completo com data, descrição, tipo, categoria e valor
+A persistência dos dados é realizada de forma simples e eficiente através de arquivos **JSON**, utilizando a biblioteca **Gson**.
 
-Categorias - Gerenciamento de categorias personalizáveis
+## ✨ Funcionalidades Principais
 
-Persistência - Dados salvos em JSON
+| Funcionalidade | Descrição |
+| :--- | :--- |
+| **Dashboard Interativo** | Visão geral do saldo atual, receitas e despesas. Inclui gráficos de pizza (gastos por categoria) e de barras (gastos por mês) para análise visual. |
+| **Gerenciamento de Transações** | CRUD (Criação, Leitura, Atualização e Exclusão) completo de transações, com campos para data, descrição, tipo (Receita/Despesa), categoria e valor. |
+| **Controle de Categorias** | Gerenciamento de categorias personalizáveis para classificar as transações. |
+| **Persistência em JSON** | Todos os dados (transações e categorias) são salvos em arquivos JSON, garantindo portabilidade e facilidade de inspeção. |
+| **Interface Moderna** | Design limpo e intuitivo, com um tema escuro agradável para longas sessões de uso. |
+| **Testes Unitários** | Cobertura de testes com **JUnit 5** para as classes de Model e DAO, garantindo a integridade da lógica de negócio. |
 
-Tema Dark - Interface moderna com tema escuro
+## 🛠️ Tecnologias Utilizadas
 
-Testes Unitários - Cobertura com JUnit 5
+O projeto foi construído com as seguintes tecnologias e bibliotecas:
 
-Tecnologias Utilizadas
-Java 17 - Linguagem de programação
+*   **Linguagem:** Java 17+
+*   **Interface Gráfica:** JavaFX 17 (com módulos `javafx-controls`, `javafx-fxml`, `javafx-web`)
+*   **Gerenciamento de Dependências:** Apache Maven
+*   **Serialização JSON:** Google Gson (v2.10.1)
+*   **Segurança (Potencial):** jBCrypt (v0.4) - Presente no `pom.xml`, indicando a possibilidade de implementação de hash de senhas.
+*   **Testes:** JUnit 5 (v5.9.2)
 
-JavaFX 17 - Framework para interface gráfica
+## 📂 Estrutura do Projeto
 
-Maven - Gerenciamento de dependências
+O projeto segue o padrão de estrutura do Maven, com uma organização clara de pacotes:
 
-Gson - Serialização JSON
+```
+FinControl/
+├── pom.xml
+├── README.md
+└── src/
+    ├── main/
+    │   ├── java/
+    │   │   └── com.fincontrol/
+    │   │       ├── controller/  (Lógica de controle das telas FXML)
+    │   │       ├── dao/         (Camada de acesso a dados - JSON)
+    │   │       ├── model/       (Classes de modelo de dados)
+    │   │       └── util/        (Classes utilitárias, como navegação)
+    │   └── resources/
+    │       └── com.fincontrol/
+    │           ├── *.fxml       (Arquivos de layout da interface)
+    │           ├── style.css    (Estilização da aplicação - Dark Theme)
+    │           └── data/        (Arquivos JSON de persistência)
+    └── test/
+        └── java/
+            └── com.fincontrol/  (Testes unitários com JUnit 5)
+```
 
-JUnit 5 - Testes unitários
+## 🚀 Como Executar o Projeto
 
-Estrutura do Projeto
-A estrutura do projeto segue o padrão Maven com separação clara de pacotes:
+### Pré-requisitos
 
-src/main/java/com/fincontrol/ - Código fonte da aplicação
+*   **Java Development Kit (JDK) 17** ou superior.
+*   **Apache Maven 3.6** ou superior.
+*   Uma IDE compatível com Maven e JavaFX (ex: IntelliJ IDEA, VS Code com extensões Java).
 
-src/main/resources/com/fincontrol/ - Arquivos FXML e CSS
+### Execução via Linha de Comando
 
-src/test/java/com/fincontrol/ - Testes unitários
+1.  **Clone o repositório:**
+    ```bash
+    git clone https://github.com/jvbartk0/FinControl.git
+    cd FinControl
+    ```
 
-Como Executar
-Pré-requisitos
-Java 17 ou superior
+2.  **Execute a aplicação:**
+    O plugin `javafx-maven-plugin` permite a execução direta:
+    ```bash
+    mvn clean javafx:run
+    ```
 
-Maven 3.6 ou superior
+3.  **Execute os testes unitários:**
+    ```bash
+    mvn test
+    ```
 
-IntelliJ IDEA (recomendado) ou outra IDE
+### Configuração em IDEs (Exemplo: IntelliJ IDEA)
 
-Configuração no IntelliJ IDEA
-Importar o projeto:
+1.  **Importar:** Abra o IntelliJ e selecione **File** -> **Open** e escolha a pasta `FinControl`. O IntelliJ deve reconhecer automaticamente o `pom.xml` como um projeto Maven.
+2.  **Configurar JDK:** Certifique-se de que o **Project SDK** esteja configurado para o **Java 17**.
+3.  **Executar:** A classe principal é `com.fincontrol.Main`. Você pode executá-la diretamente.
 
-File → Open → Selecione a pasta do projeto
+> **Nota:** Se houver problemas com a execução do JavaFX, pode ser necessário configurar as VM Options, apontando para o caminho do seu JavaFX SDK, conforme a documentação oficial do OpenJFX.
 
-Import como Maven project
+## 👤 Autor
 
-Configurar SDK:
+Este projeto foi desenvolvido por **jvbartk0** para fins de demonstração de uma aplicação JavaFX completa e bem estruturada.
 
-File → Project Structure → Project Settings → Project
+## 📄 Licença
 
-Definir Project SDK: Java 17
-
-Project language level: 17
-
-Configurar JavaFX:
-
-Adicione as VM Options para o módulo principal:
---module-path "caminho/para/javafx-sdk-17.0.2/lib" --add-modules javafx.controls,javafx.fxml,javafx.web
-
-Substitua "caminho/para/javafx-sdk-17.0.2" pelo caminho real do JavaFX SDK
-
-Executar a aplicação:
-
-Clique com botão direito em Main.java
-
-Select Run 'Main.main()'
-
-Execução via Terminal
-Compilar e executar:
-mvn clean javafx:run
-
-Executar testes:
-mvn test
-
-Instalação do JavaFX
-Baixe o JavaFX SDK 17 do site oficial
-
-Extraia em uma pasta local
-
-Configure as VM Options conforme mostrado acima
-
-Uso da Aplicação
-Login: Use qualquer usuário/senha (validação simulada)
-
-Dashboard: Visualize saldo, gráficos e resumo financeiro
-
-Transações: Adicione, edite ou exclua transações
-
-Categorias: Gerencie categorias personalizadas
-
-Persistência: Dados são automaticamente salvos em JSON
-
-Dados de Exemplo
-Ao executar pela primeira vez, o sistema cria categorias padrão:
-
-Alimentação, Transporte, Moradia, Saúde, Educação, Lazer, Salário, Investimentos
-
-Autor
-Projeto desenvolvido para demonstração de aplicação JavaFX completa.
-
-Licença
-Este projeto é para fins educacionais.
+Este projeto é fornecido para fins educacionais e de demonstração. Por favor, consulte a licença específica do projeto, se houver.
