@@ -97,9 +97,6 @@ FinControl/
 
 > **Nota:** Se houver problemas com a execução do JavaFX, pode ser necessário configurar as VM Options, apontando para o caminho do seu JavaFX SDK, conforme a documentação oficial do OpenJFX.
 
-## 👤 Autor
-
-Este projeto foi desenvolvido por **jvbartk0** para fins de demonstração de uma aplicação JavaFX completa e bem estruturada.
 
 ## 📄 Licença
 
